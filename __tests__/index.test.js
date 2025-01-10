@@ -18,13 +18,13 @@ test('Тест главного файла index.js', () => {
   const expectResultJSON = getDiffFiles(getFixturePath('file1.json'), getFixturePath('file2.json'));
   expect(expectResultJSON).toEqual(actualResult);
 
-  // const expectResultYAML = getDiffFiles('__fixtures__/file1.json', '__fixtures__/file2.yaml');
-  // expect(expectResultYAML).toEqual(actualResult);
+  const expectResultYAML = getDiffFiles(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'));
+  expect(expectResultYAML).toEqual(actualResult);
 });
 
 test('Тест 2 пробный', () => {
   const actualResult = verificationFile(getFixturePath('expected_file.txt'));
 
-  const expectResultYAML = getDiffFiles(getFixturePath('file1.json'), getFixturePath('file2.yaml'));
+  const expectResultYAML = getDiffFiles(getFixturePath('file1.json'), getFixturePath('file4.yaml'));
   expect(expectResultYAML).toEqual(actualResult);
 });
