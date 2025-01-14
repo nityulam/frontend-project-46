@@ -36,4 +36,5 @@ const getTreeDifferences = (data1, data2) => {
   // console.log('= result', result);
   return result;
 };
-export { getTreeDifferences };
+
+export default getTreeDifferences;
