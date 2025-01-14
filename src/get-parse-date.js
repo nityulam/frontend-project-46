@@ -12,4 +12,4 @@ const getParseDate = (data, format) => {
   }
 };
 
-export { getParseDate };
+export default getParseDate;
