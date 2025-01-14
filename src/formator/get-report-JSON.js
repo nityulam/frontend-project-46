@@ -25,4 +25,4 @@ const formatter = (data) => {
   return tmp;
 };
 
-export { formatter };
+export default formatter;
