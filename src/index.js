@@ -1,16 +1,17 @@
 import { extname } from 'node:path';
-import { getDate } from './get-date.js';
+import getDate from './get-date.js';
 // import { getFormat } from './get-file-extension.js';
-import { getFullPath } from './get-path.js';
-import { getParseDate } from './get-parse-date.js';
+import getFullPath from './get-path.js';
+import getParseDate from './get-parse-date.js';
 
 // import { jsonDiff } from './get-differences.js';
-import { getTreeDifferences } from './get-differences.js';
-import { formatter } from './formator/get-report-JSON.js';
+import getTreeDifferences from './get-differences.js';
+import formatter from './formator/get-report-JSON.js';
 
 // import { tmp } from './formator/tmp.js';
 
 const getDiffFiles = (filepath1, filepath2, format) => {
+  // getDate Читаем файл (получем данные из файла), getFullPath Формируем полный путь для запуска
   const file1 = getDate(getFullPath(filepath1));
   const file2 = getDate(getFullPath(filepath2));
   // console.log('- file1 -', file1);
@@ -38,4 +39,4 @@ const getDiffFiles = (filepath1, filepath2, format) => {
   // должен вернуть строку установленного формата JSON, yaml, yml
 };
 
-export { getDiffFiles };
+export default getDiffFiles;
