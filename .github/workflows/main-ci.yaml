@@ -16,13 +16,11 @@ jobs:
         run: make lint # Запуск линтера
       - name: Run tests
         run: make test # Запуск тестов
+
       - name: Run Code Climate action
         uses: paambaati/codeclimate-action@v5.0.0
         env:
-          CODECLIMATE_TOKEN: ${{ secrets.CODECLIMATE_TOKEN }}
-        with:
-          coverageCommand: make test-coverage
-          debug: true
+          CODECLIMATE_TOKEN: ${{ secrets.CODECLIMATE_TOKEN_2 }}
 #
 # Ключевое слово uses в GitHub Actions позволяет подключать готовые действия для выполнения задач, что значительно упрощает создание и поддержку рабочих процессов
 # Ключевое слово run в GitHub Actions позволяет выполнять пользовательские команды и скрипты, что делает рабочие процессы гибкими и адаптируемыми под нужды вашего проекта
