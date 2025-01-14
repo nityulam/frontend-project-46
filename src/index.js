@@ -10,7 +10,7 @@ import formatter from './formator/get-report-JSON.js';
 
 // import { tmp } from './formator/tmp.js';
 
-const getDiffFiles = (filepath1, filepath2, format) => {
+const getDiffFiles = (filepath1, filepath2) => {
   // getDate Читаем файл (получем данные из файла), getFullPath Формируем полный путь для запуска
   const file1 = getDate(getFullPath(filepath1));
   const file2 = getDate(getFullPath(filepath2));
