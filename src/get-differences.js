@@ -3,9 +3,9 @@ import _ from 'lodash';
 const getTreeDifferences = (data1, data2) => {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
-  const keysUnique = _.sortBy(_.union(keys1, keys2));
+  const sortedUniqueKeys = _.sortBy(_.union(keys1, keys2));
 
-  const result = keysUnique.map((key) => {
+  const result = sortedUniqueKeys.map((key) => {
     const value1 = data1[key];
     const value2 = data2[key];
 
@@ -19,19 +19,26 @@ const getTreeDifferences = (data1, data2) => {
       // console.log('result', result3);
       return result3;
     }
-    if (value1 === value2) {
+    if (_.isEqual(value1, value2)) {
       const result4 = { key, value: value1, status: 'unchanged' };
-      // console.log('result', result4);
+      // console.log('result unchanged', result4);
       return result4;
     }
-    const result5 = {
+
+    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
+      const child = getTreeDifferences(value1, value2);
+      const result5 = { key, children: child, status: 'hasChild' };
+      // console.log('result hasChild', result5);
+      return result5;
+    }
+
+    const result6 = {
       key,
       value: value1,
       value2,
       status: 'changed',
     };
-    return result5;
-    // тут еще будут детишки
+    return result6;
   });
   // console.log('= result', result);
   return result;
