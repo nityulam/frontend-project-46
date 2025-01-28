@@ -5,8 +5,8 @@ import getFullPath from './get-path.js';
 import getParseDate from './get-parse-date.js';
 
 import getTreeDifferences from './get-differences.js';
-import formatter from './formatter/get-report-JSON.js';
-// import formatter from './formatter/stylish.js';
+// import formatter from './formatter/get-report-JSON.js';
+import formatter from './formatter/stylish.js';
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   // getDate Читаем файл (получем данные из файла), getFullPath Формируем полный путь для запуска
