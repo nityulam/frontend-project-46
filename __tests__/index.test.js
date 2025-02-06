@@ -36,9 +36,9 @@ test('testing json, yaml, and yml in stylish', () => {
 test('testing json, yaml, and yml in plain', () => {
   const actualResult = readFile('expected_plain.txt');
 
-  const expectResultJSON = genDiff(getFixturePath('file11.json'), getFixturePath('file22.json'));
+  const expectResultJSON = genDiff(getFixturePath('file11.json'), getFixturePath('file22.json'), 'plain');
   expect(expectResultJSON).toEqual(actualResult);
 
-  const expectResultYAML = genDiff(getFixturePath('file33.yaml'), getFixturePath('file44.yaml'));
+  const expectResultYAML = genDiff(getFixturePath('file33.yaml'), getFixturePath('file44.yaml'), 'plain');
   expect(expectResultYAML).toEqual(actualResult);
 });
