@@ -20,9 +20,6 @@ const stringify = (data, depth) => {
 };
 
 const stylish = (data) => {
-  if (_.isPlainObject(data)) {
-    return `${data}`;
-  }
   const iter = (obj, depth) => {
     const result = obj.map((item) => {
       const { key, value, oldValue, newValue, children, status } = item;
