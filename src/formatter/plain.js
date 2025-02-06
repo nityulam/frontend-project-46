@@ -11,8 +11,6 @@ const isItComposite = (data) => {
 };
 
 const plain = (data) => {
-  console.log('------');
-
   const iter = (obj, path = '') => {
     const result = obj.flatMap((item) => {
       const { key, value, oldValue, newValue, children, status } = item;
@@ -30,7 +28,7 @@ const plain = (data) => {
         case 'hasChild':
           return iter(children, collectingPath);
         default:
-        // nothing
+          throw new Error(`Status ${status} is not supported`);
       }
     });
     return `${result.join('\n')}`;
