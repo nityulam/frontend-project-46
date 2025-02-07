@@ -10,23 +10,29 @@ const isItComposite = (data) => {
   return data;
 };
 
+const collectingPath = (path, key) => {
+  if (path === '') {
+    return [key].join('.');
+  }
+  return [path, key].join('.');
+};
+
 const plain = (data) => {
   const iter = (obj, path = '') => {
     const result = obj.flatMap((item) => {
       const { key, value, oldValue, newValue, children, status } = item;
-      const collectingPath = [path, key].join('.');
 
       switch (status) {
         case 'added':
-          return `Property '${collectingPath}' was added with value: ${isItComposite(value)}`;
+          return `Property '${collectingPath(path, key)}' was added with value: ${isItComposite(value)}`;
         case 'deleted':
-          return `Property '${collectingPath}' was removed`;
+          return `Property '${collectingPath(path, key)}' was removed`;
         case 'changed':
-          return `Property '${collectingPath}' was updated. From ${isItComposite(oldValue)} to ${isItComposite(newValue)}`;
+          return `Property '${collectingPath(path, key)}' was updated. From ${isItComposite(oldValue)} to ${isItComposite(newValue)}`;
         case 'unchanged':
           return [];
         case 'hasChild':
-          return iter(children, collectingPath);
+          return iter(children, collectingPath(path, key));
         default:
           throw new Error(`Status ${status} is not supported`);
       }
