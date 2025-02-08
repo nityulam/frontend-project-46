@@ -51,6 +51,7 @@ export default [
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
       'no-console': 'off',
+      // Откл правило (после открытия и перед закрытием фигурных скобок были одинаковые разрывы на линии) добавив строку 'object-curly-newline': 'off',
       'object-curly-newline': 'off',
       'import/no-extraneous-dependencies': 'off',
     },
