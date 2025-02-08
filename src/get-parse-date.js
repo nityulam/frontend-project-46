@@ -8,7 +8,7 @@ const getParseDate = (data, format) => {
     case '.yml':
       return yaml.load(data);
     default:
-      throw new Error(`Extension ${format} it is not supported.`);
+      throw new Error(`Extension ${format} it is not supported`);
   }
 };
 
