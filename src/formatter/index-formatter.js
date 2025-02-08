@@ -10,7 +10,7 @@ const formatter = (data, format) => {
     case 'json':
       return JSON.stringify(data, null, 2);
     default:
-      throw new Error(`Format ${format} does not exist`);
+      throw new Error(`Cannot be converted to format ${format}`);
   }
 };
 
