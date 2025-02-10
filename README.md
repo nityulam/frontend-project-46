@@ -11,6 +11,11 @@
 
 [![main CI](https://github.com/nityulam/frontend-project-46/actions/workflows/main-ci.yaml/badge.svg)](https://github.com/nityulam/frontend-project-46/actions/workflows/main-ci.yaml)
 
+## Description
+
+Difference Calculator is a program that determines the difference between two data structures.
+The utility supports various input formats: json, yaml, yml, and generates reports in the form of plain text, stylish, and json.
+
 ### Setup
 
 make install
@@ -18,11 +23,6 @@ make install
 ### Run tests
 
 make test
-
-## Description
-
-Difference Calculator is a program that determines the difference between two data structures.
-The utility supports various input formats: json, yaml, yml, and generates reports in the form of plain text, stylish, and json.
 
 ## :video_camera: Examples of how the program works:
 
