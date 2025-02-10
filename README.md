@@ -11,6 +11,14 @@
 
 [![main CI](https://github.com/nityulam/frontend-project-46/actions/workflows/main-ci.yaml/badge.svg)](https://github.com/nityulam/frontend-project-46/actions/workflows/main-ci.yaml)
 
+### Setup
+
+make install
+
+### Run tests
+
+make test
+
 ## Description
 
 Difference Calculator is a program that determines the difference between two data structures.
@@ -18,18 +26,18 @@ The utility supports various input formats: json, yaml, yml, and generates repor
 
 ## :video_camera: Examples of how the program works:
 
-## Comparing flat files with the extension .json, .yaml, .yaml. and the output of the result in a **Stylish and Plain** format
+### Comparing flat files with the extension .json, .yaml, .yaml. and the output of the result in a **Stylish and Plain** format
 
 [![asciicast](https://asciinema.org/a/7CccMPhs1UPhu6gUNIx2TBIkd.svg)](https://asciinema.org/a/7CccMPhs1UPhu6gUNIx2TBIkd)
 
-## Comparison of files with nested structure and output in **Stylish** format
+### Comparison of files with nested structure and output in **Stylish** format
 
 [![asciicast](https://asciinema.org/a/pI5YfEbO6N2WcSQQLt9V4ty1a.svg)](https://asciinema.org/a/pI5YfEbO6N2WcSQQLt9V4ty1a)
 
-## Comparison of files with nested structure and output in **Plain** format
+### Comparison of files with nested structure and output in **Plain** format
 
 [![asciicast](https://asciinema.org/a/MfzvFNF584KUiM1ZP9NNg5E2K.svg)](https://asciinema.org/a/MfzvFNF584KUiM1ZP9NNg5E2K)
 
-## Comparison of files with nested structure and output in **JSON** format
+### Comparison of files with nested structure and output in **JSON** format
 
 [![asciicast](https://asciinema.org/a/mqryD5nuXKhJVkXjAeqvMDRJB.svg)](https://asciinema.org/a/mqryD5nuXKhJVkXjAeqvMDRJB)
