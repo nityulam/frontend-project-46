@@ -55,7 +55,7 @@ test('testing json, yaml, and yml in json', () => {
 
 test('testing "The file extension is not supported"', () => {
   expect(() => {
-    genDiff(getFixturePath('file.txt'), getFixturePath('file44.yaml'));
+    genDiff(getFixturePath('unsupp_extension.txt'), getFixturePath('file44.yaml'));
   }).toThrow('Extension .txt it is not supported');
 });
 
