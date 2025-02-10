@@ -10,6 +10,9 @@ test:
 test-coverage:
 	npm test -- --coverage
 
+# test -w:
+# npx jest --watch
+
 lint:
 	npx eslint .
 
