@@ -13,6 +13,7 @@ const stringify = (data, depth) => {
 
   const str = arrData.map(([key, value]) => {
     const result = `  ${indent(depth)}  ${key}: ${stringify(value, depth + 1)}`;
+    // console.log('-key-', key);
     return result;
   });
   return `{\n${str.join('\n')}\n${indent(depth)}}`;
