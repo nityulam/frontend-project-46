@@ -53,7 +53,7 @@ export default [
       'no-console': 'off',
       // Откл правило (после открытия и перед закрытием фигурных скобок были одинаковые
       // разрывы на линии) добавив строку 'object-curly-newline': 'off',
-      'object-curly-newline': 'off',
+      // 'object-curly-newline': 'off',
       'import/no-extraneous-dependencies': 'off',
     },
   },
