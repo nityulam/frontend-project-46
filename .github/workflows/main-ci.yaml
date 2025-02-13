@@ -20,7 +20,7 @@ jobs:
       - name: Run Code Climate reporter
         uses: paambaati/codeclimate-action@v9.0.0
         env:
-          CC_TEST_REPORTER_ID: ${ { secrets.CC_TEST_REPORTER_ID } }
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           # Ключевое слово with используется для передачи параметров в действие (action). В данном случае параметры передаются в действие paambaati/codeclimate-action
           coverageCommand: make test-coverage # Команда для запуска тестов и генерации отчета
