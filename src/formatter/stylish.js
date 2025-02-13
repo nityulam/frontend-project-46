@@ -21,7 +21,9 @@ const stringify = (data, depth) => {
 const stylish = (data) => {
   const iter = (obj, depth) => {
     const result = obj.map((item) => {
-      const { key, value, oldValue, newValue, children, status } = item;
+      const {
+        key, value, oldValue, newValue, children, status,
+      } = item;
 
       switch (status) {
         case 'added':
