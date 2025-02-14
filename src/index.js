@@ -1,9 +1,14 @@
-import { extname } from 'node:path';
-
-import { getDate, getFullPath } from './utils.js';
-import getParseDate from './get-parse-date.js';
-import getTreeDifferences from './get-differences.js';
+import { extname, resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
+import getParseDate from './parsers.js';
+import getTreeDifferences from './getDiffTree.js';
 import formatter from './formatter/index-formatter.js';
+
+// Читаем файл (получем данные из файла)
+const getDate = (file) => readFileSync(file, 'utf-8');
+
+// Формируем полный путь для запуска
+const getFullPath = (pathFile) => resolve(process.cwd(), pathFile);
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   // getDate Читаем файл (получем данные из файла), getFullPath Формируем полный путь для запуска
