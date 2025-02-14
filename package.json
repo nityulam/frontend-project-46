@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/nityulam/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nityulam/frontend-project-46/actions)",
+  "description": "Difference Calculator is a program that determines the difference between two data structures",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
@@ -11,7 +11,7 @@
     "test": "npx jest",
     "lint:fix": "eslint . --fix"
   },
-  "author": "",
+  "author": "Dmitry",
   "license": "ISC",
   "dependencies": {
     "commander": "^12.1.0",
