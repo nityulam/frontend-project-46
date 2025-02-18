@@ -20,11 +20,9 @@ const collectingPath = (path, key) => {
 const plain = (data) => {
   const iter = (obj, path = '') => {
     const result = obj.flatMap((item) => {
-      const {
-        key, value, oldValue, newValue, children, status,
-      } = item;
+      const { key, value, oldValue, newValue, type } = item;
 
-      switch (status) {
+      switch (type) {
         case 'added':
           return `Property '${collectingPath(path, key)}' was added with value: ${isItComposite(value)}`;
         case 'deleted':
@@ -33,10 +31,10 @@ const plain = (data) => {
           return `Property '${collectingPath(path, key)}' was updated. From ${isItComposite(oldValue)} to ${isItComposite(newValue)}`;
         case 'unchanged':
           return [];
-        case 'hasChild':
-          return iter(children, collectingPath(path, key));
+        case 'nested':
+          return iter(value, collectingPath(path, key));
         default:
-          throw new Error(`Status ${status} is not supported`);
+          throw new Error(`Status ${type} is not supported`);
       }
     });
     return `${result.join('\n')}`;
