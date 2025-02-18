@@ -19,13 +19,15 @@ const stringify = (data, depth) => {
 };
 
 const stylish = (data) => {
-  const iter = (obj, depth) => {
-    const result = obj.map((item) => {
-      const {
-        key, value, oldValue, newValue, children, status,
-      } = item;
+  const iter = (nodes, depth) => {
+    // console.log('---!---obj', obj);
 
-      switch (status) {
+    const result = nodes.map((node) => {
+      // console.log('--------', item);
+      const { key, value, oldValue, newValue, type } = node;
+      // console.log('-----', type);
+
+      switch (type) {
         case 'added':
           return `  ${indent(depth)}+ ${key}: ${stringify(value, depth + 1)}`;
         case 'deleted':
@@ -34,10 +36,10 @@ const stylish = (data) => {
           return `  ${indent(depth)}  ${key}: ${stringify(value, depth + 1)}`;
         case 'changed':
           return `  ${indent(depth)}- ${key}: ${stringify(oldValue, depth + 1)}\n  ${indent(depth)}+ ${key}: ${stringify(newValue, depth + 1)}`;
-        case 'hasChild':
-          return `  ${indent(depth)}  ${key}: ${iter(children, depth + 1)}`;
+        case 'nested':
+          return `  ${indent(depth)}  ${key}: ${iter(value, depth + 1)}`;
         default:
-          throw new Error(`Status ${status} is not supported`);
+          throw new Error(`Status ${type} is not supported`);
       }
     });
     return `{\n${result.join('\n')}\n${indent(depth)}}`;
