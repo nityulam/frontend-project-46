@@ -20,7 +20,9 @@ const collectingPath = (path, key) => {
 const plain = (data) => {
   const iter = (obj, path = '') => {
     const result = obj.flatMap((item) => {
-      const { key, value, oldValue, newValue, type } = item;
+      const {
+        key, value, oldValue, newValue, type,
+      } = item;
 
       switch (type) {
         case 'added':
