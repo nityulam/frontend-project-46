@@ -24,7 +24,9 @@ const stylish = (data) => {
 
     const result = nodes.map((node) => {
       // console.log('--------', item);
-      const { key, value, oldValue, newValue, type } = node;
+      const {
+        key, value, oldValue, newValue, type,
+      } = node;
       // console.log('-----', type);
 
       switch (type) {
