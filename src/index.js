@@ -2,7 +2,7 @@ import { extname, resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
 import getParseDate from './parsers.js';
 import getTreeDifferences from './getDiffTree.js';
-import formatter from './formatter/index-formatter.js';
+import formatter from './formatter/indexFormatter.js';
 
 // Читаем файл (получем данные из файла)
 const getDate = (file) => readFileSync(file, 'utf-8');
