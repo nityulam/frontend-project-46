@@ -1,8 +1,6 @@
 import yaml from 'js-yaml';
 
 const getParseDate = (data, format) => {
-  console.log('------------------', format);
-
   switch (format) {
     case 'json':
       return JSON.parse(data);
