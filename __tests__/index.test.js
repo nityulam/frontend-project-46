@@ -24,7 +24,7 @@ test.each(casesFormats)('testing gendiff', (format) => {
 test('testing "The file extension is not supported"', () => {
   expect(() => {
     genDiff(getFixturePath('unsupp_extension.txt'), getFixturePath('file2.yaml'));
-  }).toThrow('Extension .txt it is not supported');
+  }).toThrow('Extension txt it is not supported');
 });
 
 test('testing "The specified format is not supported"', () => {
