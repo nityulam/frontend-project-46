@@ -16,8 +16,8 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const file2 = getDate(getFullPath(filepath2));
 
   // Получаем распарсенные данные в зависимости от формата(extname - получаем расширение файла)
-  const date1 = getParseDate(file1, extname(filepath1));
-  const date2 = getParseDate(file2, extname(filepath2));
+  const date1 = getParseDate(file1, extname(filepath1).slice(1));
+  const date2 = getParseDate(file2, extname(filepath2).slice(1));
 
   // Получаем отличия в виде дерева (массива) со статусами
   const differences = getTreeDifferences(date1, date2);
